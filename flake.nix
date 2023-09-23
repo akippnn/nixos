@@ -23,8 +23,8 @@
 
   };
 
-  outputs = inputs:
-    inputs.snowfall-lib.mkFlake {
+  outputs = inputs: let
+    lib = inputs.snowfall-lib.mkLib {
       inherit inputs;
 
       src = ./.;
@@ -35,6 +35,12 @@
 	  name = "winter";
 	  title = "Winter NixOS";
 	};
+      };
+    };
+  in
+    lib.mkFlake {
+      channels-config = {
+        allowUnfree = true;
       };
 
       #overlays = with inputs; [
