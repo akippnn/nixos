@@ -1,10 +1,4 @@
-{
-	lib,
-	pkgs,
-	inputs,
-	config,
-	...
-}:
+{ config, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -16,6 +10,8 @@
   home.packages = [
     pkgs.appimage-run
     pkgs.epson-escpr
+    pkgs.wpsoffice
+    pkgs.obsidian
   ];
 
   # This value determines the Home Manager release that your

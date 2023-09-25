@@ -2,17 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{
-	config,
-	pkgs,
-	inputs,
-	...
-}:
+{ config, pkgs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware.nix
+      ./hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -140,12 +135,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-  
-  nix = {
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      substituters = [ "https://ezkea.cachix.org" ];
-      trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" ];
-    };
-  };
 }
