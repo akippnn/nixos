@@ -9,7 +9,8 @@ let
                                 # and packages.el files
   };
 in {
-  home.packages = [
-    doom-emacs
-  ];
+  services.emacs = {
+    enable = true;
+    package = doom-emacs;
+  };
 }

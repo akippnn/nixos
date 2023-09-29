@@ -1,8 +1,13 @@
-{ config, pkgs, ... }:
+{
+    config,
+    pkgs,
+    pkgs-unstable,
+    ...
+}:
 
 {
   imports = [
-    ./emacs
+    # ./emacs
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -15,7 +20,6 @@
     pkgs.appimage-run
     pkgs.epson-escpr
     pkgs.wpsoffice
-    pkgs.obsidian
   ];
 
   # This value determines the Home Manager release that your
