@@ -26,6 +26,7 @@
         };
 
         kernelPackages = pkgs.linuxPackages_zen;
+	supportedFilesystems = [ "ntfs" ];
     };
 
     networking.hostName = "ordinateur"; # Define your hostname.
@@ -90,9 +91,10 @@
     users.users.aki = {
         isNormalUser = true;
         description = "Aki";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "adbusers" ];
         packages = [
             pkgs.firefox
+	    pkgs.neofetch
             #  thunderbird
         ];
     };
@@ -106,6 +108,8 @@
         #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         #  wget
     ];
+
+    programs.adb.enable = true;
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.

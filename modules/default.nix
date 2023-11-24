@@ -8,7 +8,6 @@
 {
     imports = [
         ./system.nix
-        ./emacs.nix
         ./python.nix
         ./steam.nix
     ];

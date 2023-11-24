@@ -31,16 +31,16 @@
                 modules = [
                     ./hosts/ordinateur
 
-                    {
-                        environment.systemPackages =
-                        let
-                            doom-emacs = nix-doom-emacs.packages.${system}.default.override {
-                                doomPrivateDir = ./etc/doom.d;
-                            };
-                        in [
-                            doom-emacs
-                        ];
-                    }
+#                    {
+#                        environment.systemPackages =
+#                        let
+#                            doom-emacs = nix-doom-emacs.packages.${system}.default.override {
+#                                doomPrivateDir = ./etc/doom.d;
+#                            };
+#                        in [
+#                            doom-emacs
+#                        ];
+#                    }
 
                     home-manager.nixosModules.home-manager
                     {
@@ -48,7 +48,7 @@
                         home-manager.useUserPackages = true;
 
                         home-manager.extraSpecialArgs = inputs;
-                        home-manager.users.aki = import ./home-manager/ordinateur/aki;
+                        home-manager.users.aki = import ./home-manager/aki;
                     }
                 ];
             };
