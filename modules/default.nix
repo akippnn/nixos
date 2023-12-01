@@ -8,6 +8,7 @@
 {
     imports = [
         ./system.nix
+	./flatpak.nix
         ./python.nix
         ./steam.nix
     ];
